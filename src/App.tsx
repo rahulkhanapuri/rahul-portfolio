@@ -5,10 +5,64 @@ import { Bounties } from './sections/Bounties';
 import { Islands } from './sections/Islands';
 import { Contact } from './sections/Contact';
 
+interface Quote {
+  text: string;
+  author: string;
+  role: string;
+  avatar: string;
+  color: string;
+}
+
+const quotesList: Quote[] = [
+  {
+    text: "I don't want to conquer anything. I just think the guy with the most freedom on this whole ocean is the Pirate King!",
+    author: "Monkey D. Luffy",
+    role: "Captain of the Straw Hat Pirates",
+    avatar: "https://lh3.googleusercontent.com/aida-public/AB6AXuDEdMocE_uq77Hdn8QwkfBpxkf3ZaQQE983oM7e_OmteQVwZLbbbF6HQ_yw8bk94c8BB4gsgBTgKCOS5SKggiW1AOaSRDr-ei7pwNVvnaB142y3CGWdJPkEb1BzoQg-9YpJb84gBnm4zGpflx-BxjOfg0JcTYagdiAAC31VSEzguaxdCErPE7H8wNiwcpJE6tDtSx5JpFDqx0BkRa5GEqnrEmQnhkDfn96slKMwlbezJU2qDuIZ1tUL_-Y-ClgXSKlPjKr3BYciCrfJ",
+    color: "border-[#FFDB3C] text-[#FFDB3C] shadow-[0_0_20px_rgba(255,219,60,0.4)]"
+  },
+  {
+    text: "If you don't take risks, you can't create a future!",
+    author: "Monkey D. Luffy",
+    role: "Captain of the Straw Hat Pirates",
+    avatar: "https://lh3.googleusercontent.com/aida-public/AB6AXuDEdMocE_uq77Hdn8QwkfBpxkf3ZaQQE983oM7e_OmteQVwZLbbbF6HQ_yw8bk94c8BB4gsgBTgKCOS5SKggiW1AOaSRDr-ei7pwNVvnaB142y3CGWdJPkEb1BzoQg-9YpJb84gBnm4zGpflx-BxjOfg0JcTYagdiAAC31VSEzguaxdCErPE7H8wNiwcpJE6tDtSx5JpFDqx0BkRa5GEqnrEmQnhkDfn96slKMwlbezJU2qDuIZ1tUL_-Y-ClgXSKlPjKr3BYciCrfJ",
+    color: "border-[#FFDB3C] text-[#FFDB3C] shadow-[0_0_20px_rgba(255,219,60,0.4)]"
+  },
+  {
+    text: "When do you think people die? When they are shot by a heart-seeking bullet? No. They die when they are forgotten!",
+    author: "Dr. Hiriluk",
+    role: "Quack Doctor of Drum Island",
+    avatar: "https://lh3.googleusercontent.com/aida-public/AB6AXuCVpYQyisB_GMtusH8Md59YMcLw672kIueUDioFhWHzgMJUe58SGrC1LE-nP5pk4sHAE5ZEE-Yw84J8bkH12TBbf_z1NIdQwmQiRfn0j1T2tpPdUoGjUYz68oYl4LPIoYeWmB0HQx9rxotE-hnaQZSPVUX--igAbabFtp2rh6sKkgl-3OtyC223jSw-Fvm9ZfrLCYAfkSTj6NTXZbG6fpUA3ovYypI4Tt2N33MntJV1WXknp3CyyA39HtcabwR4a52_eqplkY3MXQih",
+    color: "border-[#FF7373] text-[#FF7373] shadow-[0_0_20px_rgba(255,115,115,0.4)]"
+  },
+  {
+    text: "Inherited Will, The Destiny of Age, and The Dreams of People... As long as people continue to pursue the meaning of Freedom, these things will never cease to be!",
+    author: "Gol D. Roger",
+    role: "The Pirate King",
+    avatar: "https://lh3.googleusercontent.com/aida-public/AB6AXuD-8KUEL-CEBjnbY3JaOf6Hk5zOeupGShO4w5kJIpDTm4XW7oOdY9yryjGZ4RIvTI7Mjy_zRSGWI5a-N2gVUj_YqUUbLasEw_1ASQVHlOFdprAxo3qr421qtDwig1HJqB5DjkIK4X9FwSqA20WvHK4COeXfq-RY6pBE3CemWtXgZjnzGfp4k_j7o60SDBGEAa4TFO8gCF_JO-bb1oaeIKRujw_12Q-1aocpvBKsb5EYdBCojQrHasCaDtDcE6bnOYdzBB0SbER15GWy",
+    color: "border-[#79A0E3] text-[#79A0E3] shadow-[0_0_20px_rgba(121,160,227,0.4)]"
+  },
+  {
+    text: "When I decided to follow my dream, I had already discarded my life.",
+    author: "Roronoa Zoro",
+    role: "Swordsman of the Straw Hat Pirates",
+    avatar: "https://lh3.googleusercontent.com/aida-public/AB6AXuCbjNGTufMNQIWrT1UX4NcxRpE62ZXOtuWoa06fiKICebzfoSzCtE0kCBzciQq0hsCU1STunVQzXx11u6238_Ofj_h1bPsEACqu7LLXVrusJCeip6zHMpKBJEvWONW6zA3x9xRoPq7gW0hTxblFAoa5x2RGxVJDo1HQDaGd2NWhj90RStJTvEzcf2KZZqdGidCJD9mmpuEQNwwouga1T9AfaWg4He7CHXbcMuDWEMMn5ZBcHPREm_dby3cCjQkZ0-JL4bZpDNVcdy1Q",
+    color: "border-[#79A0E3] text-[#79A0E3] shadow-[0_0_20px_rgba(121,160,227,0.4)]"
+  },
+  {
+    text: "By experiencing both victory and defeat, running away and shedding tears, a man will grow up.",
+    author: "Red-Haired Shanks",
+    role: "Captain of the Red Hair Pirates",
+    avatar: "https://lh3.googleusercontent.com/aida-public/AB6AXuDEdMocE_uq77Hdn8QwkfBpxkf3ZaQQE983oM7e_OmteQVwZLbbbF6HQ_yw8bk94c8BB4gsgBTgKCOS5SKggiW1AOaSRDr-ei7pwNVvnaB142y3CGWdJPkEb1BzoQg-9YpJb84gBnm4zGpflx-BxjOfg0JcTYagdiAAC31VSEzguaxdCErPE7H8wNiwcpJE6tDtSx5JpFDqx0BkRa5GEqnrEmQnhkDfn96slKMwlbezJU2qDuIZ1tUL_-Y-ClgXSKlPjKr3BYciCrfJ",
+    color: "border-[#FF7373] text-[#FF7373] shadow-[0_0_20px_rgba(255,115,115,0.4)]"
+  }
+];
+
 function App() {
   const [activeSection, setActiveSection] = useState('home');
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [compassAngle, setCompassAngle] = useState(0);
+  const [selectedQuote, setSelectedQuote] = useState<Quote | null>(null);
 
   // Scroll detection to highlight active nav link
   useEffect(() => {
@@ -47,15 +101,9 @@ function App() {
   const handleCompassClick = () => {
     // Spin rapidly on click
     setCompassAngle(prev => prev + 360);
-    // Alert or small easter egg quote from One Piece
-    const quotes = [
-      "Inherited Will, The Destiny of Age, and The Dreams of People... As long as people continue to pursue the meaning of Freedom, these things will never cease to be! — Gol D. Roger",
-      "I don't want to conquer anything. I just think the guy with the most freedom on this whole ocean is the Pirate King! — Luffy",
-      "If you don't take risks, you can't create a future! — Monkey D. Luffy",
-      "When do you think people die? When they are shot by a heart-seeking bullet? No. They die when they are forgotten! — Dr. Hiriluk"
-    ];
-    const randomQuote = quotes[Math.floor(Math.random() * quotes.length)];
-    alert(randomQuote);
+    // Choose random quote to open modal
+    const randomQuote = quotesList[Math.floor(Math.random() * quotesList.length)];
+    setSelectedQuote(randomQuote);
   };
 
   return (
@@ -67,10 +115,13 @@ function App() {
       <header className="hidden md:flex fixed top-0 w-full z-50 justify-between items-center px-margin-desktop h-20 bg-surface-dim/80 backdrop-blur-xl border-b-4 border-surface-container-highest shadow-[0_0_20px_rgba(255,219,60,0.2)]">
         <div 
           onClick={() => scrollToSection('home')} 
-          className="flex items-center gap-2 cursor-pointer scale-95 active:scale-90 transition-transform group"
+          className="flex flex-col cursor-pointer scale-95 active:scale-90 transition-transform group select-none"
         >
-          <span className="font-headline-lg text-2xl font-black text-secondary tracking-tighter uppercase group-hover:brightness-110">
+          <span className="font-headline-lg text-2xl font-black text-secondary tracking-tighter uppercase group-hover:brightness-110 leading-none">
             LOGBOOK
+          </span>
+          <span className="font-mono text-[9px] text-primary tracking-widest uppercase font-bold mt-1 leading-none">
+            Rahul Khanapuri
           </span>
         </div>
         
@@ -134,7 +185,10 @@ function App() {
 
       {/* Mobile Top Header trigger */}
       <div className="md:hidden fixed top-0 w-full z-30 h-16 bg-surface-dim/80 backdrop-blur-xl border-b-4 border-surface-container-highest flex items-center px-4 justify-between">
-        <span className="font-headline-lg text-xl font-black text-secondary tracking-tighter uppercase">LOGBOOK</span>
+        <div className="flex flex-col cursor-pointer" onClick={() => scrollToSection('home')}>
+          <span className="font-headline-lg text-lg font-black text-secondary tracking-tighter uppercase leading-none">LOGBOOK</span>
+          <span className="font-mono text-[8px] text-primary tracking-widest uppercase font-bold mt-0.5 leading-none">Rahul Khanapuri</span>
+        </div>
         <button 
           onClick={() => setMobileMenuOpen(prev => !prev)}
           className="text-primary p-2 flex items-center justify-center"
@@ -262,8 +316,89 @@ function App() {
           </span>
         </div>
       </footer>
+
+      {/* Wisdom Quote Modal */}
+      {selectedQuote && (
+        <WisdomModal quote={selectedQuote} onClose={() => setSelectedQuote(null)} />
+      )}
     </div>
   );
 }
+
+/* ─── Wisdom Quote Modal Component ───────────────────────────── */
+interface WisdomModalProps {
+  quote: Quote;
+  onClose: () => void;
+}
+
+const WisdomModal: React.FC<WisdomModalProps> = ({ quote, onClose }) => {
+  return (
+    <div className="fixed inset-0 z-50 flex items-center justify-center bg-background/85 backdrop-blur-md px-4">
+      {/* Click outside to close */}
+      <div className="absolute inset-0" onClick={onClose} />
+      
+      {/* Modal Container */}
+      <div className={`w-full max-w-lg bg-surface-dim/95 border-2 rounded-2xl p-6 relative font-mono text-sm z-10 transition-all ${quote.color}`}>
+        {/* Close Button */}
+        <div className="absolute top-0 right-0 p-4">
+          <button 
+            onClick={onClose}
+            className="text-on-surface-variant hover:text-white transition-colors"
+          >
+            <span className="material-symbols-outlined">close</span>
+          </button>
+        </div>
+        
+        {/* Wisdom Label */}
+        <h3 className="font-mono text-xs text-[#b8070f] font-bold mb-5 tracking-widest uppercase flex items-center gap-1.5 border-b border-surface-container-highest pb-3">
+          <span className="material-symbols-outlined text-[#ffdb3c] animate-pulse">explore</span>
+          Compass Wisdom Transmitted
+        </h3>
+        
+        {/* Quote Content */}
+        <div className="flex flex-col sm:flex-row items-center sm:items-start gap-4">
+          {/* Character Avatar */}
+          <div className="w-16 h-16 rounded-full overflow-hidden border-2 border-[#ffdb3c] shadow-md flex-shrink-0 bg-surface">
+            <img 
+              alt={quote.author} 
+              className="w-full h-full object-cover"
+              src={quote.avatar}
+            />
+          </div>
+          
+          {/* Text block */}
+          <div className="flex-grow text-center sm:text-left">
+            <h4 className="font-mono text-sm text-[#ffdb3c] font-black uppercase tracking-wide">
+              {quote.author}
+            </h4>
+            <span className="font-mono text-[9px] text-outline-variant uppercase tracking-widest block mb-3 leading-none">
+              {quote.role}
+            </span>
+            
+            <p className="font-mono text-xs text-on-surface-variant leading-relaxed italic border-l-2 border-[#b8070f] pl-3 py-1 bg-surface-lowest/30 rounded-r text-left">
+              "{quote.text}"
+            </p>
+          </div>
+        </div>
+        
+        {/* Telemetry log footer */}
+        <div className="border-t border-surface-container-highest mt-6 pt-3 flex justify-between items-center text-[8px] text-outline-variant font-mono tracking-wider">
+          <span>CODENAME: WILL_OF_D</span>
+          <span>STATUS: SYNCED</span>
+        </div>
+        
+        {/* Dismiss Button */}
+        <div className="mt-5 flex justify-center">
+          <button 
+            onClick={onClose}
+            className="px-5 py-2 bg-gradient-to-r from-secondary-container to-secondary text-on-secondary font-title-md text-[10px] font-bold uppercase rounded-lg border border-secondary/40 hover:brightness-110 active:scale-95 transition-all shadow-[0_0_15px_rgba(255,219,60,0.25)]"
+          >
+            Acknowledge Wisdom
+          </button>
+        </div>
+      </div>
+    </div>
+  );
+};
 
 export default App;
