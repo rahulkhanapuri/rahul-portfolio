@@ -1,4 +1,16 @@
 import React, { useState } from 'react';
+import emailjs from '@emailjs/browser';
+
+// ─── EmailJS Configuration ───────────────────────────────────────────
+// Create a free account at https://www.emailjs.com and fill these in
+// via a .env file at the project root:
+//   VITE_EMAILJS_SERVICE_ID=service_xxxxxxx
+//   VITE_EMAILJS_TEMPLATE_ID=template_xxxxxxx
+//   VITE_EMAILJS_PUBLIC_KEY=xxxxxxxxxxxx
+// ─────────────────────────────────────────────────────────────────────
+const EMAILJS_SERVICE_ID = import.meta.env.VITE_EMAILJS_SERVICE_ID as string;
+const EMAILJS_TEMPLATE_ID = import.meta.env.VITE_EMAILJS_TEMPLATE_ID as string;
+const EMAILJS_PUBLIC_KEY = import.meta.env.VITE_EMAILJS_PUBLIC_KEY as string;
 
 export const Contact: React.FC = () => {
   const [name, setName] = useState('');
@@ -7,26 +19,49 @@ export const Contact: React.FC = () => {
   const [message, setMessage] = useState('');
   const [isTransmitting, setIsTransmitting] = useState(false);
   const [showLogOutput, setShowLogOutput] = useState(false);
+  const [transmitError, setTransmitError] = useState<string | null>(null);
   const [frequency] = useState(1524.8);
 
-  const handleTransmit = (e: React.FormEvent) => {
+  const handleTransmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!name || !email || !message) {
       alert("Transmission requires Captain Alias, Email Frequency, and Message!");
       return;
     }
-    
+
     setIsTransmitting(true);
-    
-    // Simulate transmission steps
-    setTimeout(() => {
+    setTransmitError(null);
+
+    // Template parameters – these keys must match the {{…}} placeholders
+    // in your EmailJS template (create one in the EmailJS dashboard).
+    const templateParams = {
+      name: name,
+      email: email,
+      message: message,
+      title: affiliation ? affiliation : "Fleet / Vessel",
+    };
+
+    try {
+      await emailjs.send(
+        EMAILJS_SERVICE_ID,
+        EMAILJS_TEMPLATE_ID,
+        templateParams,
+        EMAILJS_PUBLIC_KEY,
+      );
       setIsTransmitting(false);
       setShowLogOutput(true);
-    }, 2500);
+    } catch (err: any) {
+      console.error('EmailJS transmission failed:', err);
+      setIsTransmitting(false);
+      setTransmitError(
+        err?.text || err?.message || 'Signal lost in the Calm Belt. Try again later.'
+      );
+    }
   };
 
   const handleCloseLog = () => {
     setShowLogOutput(false);
+    setTransmitError(null);
     setName('');
     setAffiliation('');
     setEmail('');
@@ -37,7 +72,7 @@ export const Contact: React.FC = () => {
     <section id="contact" className="py-24 relative flex flex-col justify-center items-center min-h-screen border-t-4 border-surface-container-highest overflow-hidden">
       {/* Tempestuous Moonlit Ocean Background */}
       <div className="absolute inset-0 z-0 overflow-hidden">
-        <div 
+        <div
           className="absolute inset-0 bg-cover bg-center opacity-25 mix-blend-screen"
           style={{
             backgroundImage: "url('https://lh3.googleusercontent.com/aida-public/AB6AXuCOPQ2UihOP0YboOdpAdUiGRzOKuNpUN-6cwUPXD6L8J_8sKWF2eQARKjNWkPVnLjUvr4yA2DOOI-aksNWxVxzMLwFldwIA80Vzap2UpfvzVDf2Dfsw7om-o_qg1nc8FNJI-CdEkUVk81eB7-StBlIHcGT7-vbjyDwobydzSGrLm1aKEkDjn-npDiFHTs6NeIF479lDGEhe8ndoM0I_6rNOdh4vD8S-iQAP2HrCVMAq4HNjWott-vbyJmnc1Q5x18VLOuFNK-jVfhjo')"
@@ -59,13 +94,13 @@ export const Contact: React.FC = () => {
 
       {/* Grid Container */}
       <div className="w-full max-w-5xl grid grid-cols-1 md:grid-cols-12 gap-panel-gap z-10 relative px-margin-mobile">
-        
+
         {/* Left Panel: Snail Visualizer */}
         <div className="md:col-span-5 glass-panel manga-border rounded-xl p-6 flex flex-col justify-between relative overflow-hidden group min-h-[350px]">
           {/* Neon Corner Borders */}
           <div className="absolute top-0 left-0 w-16 h-16 border-t-2 border-l-2 border-secondary opacity-50 m-2 group-hover:opacity-100 transition-opacity"></div>
           <div className="absolute bottom-0 right-0 w-16 h-16 border-b-2 border-r-2 border-tertiary opacity-50 m-2 group-hover:opacity-100 transition-opacity"></div>
-          
+
           <div className="flex items-center gap-2 mb-4">
             <span className="material-symbols-outlined text-secondary text-[40px] drop-shadow-[0_0_10px_rgba(255,219,60,0.8)]" style={{ fontVariationSettings: "'FILL' 1" }}>
               cell_tower
@@ -79,14 +114,14 @@ export const Contact: React.FC = () => {
           <div className="flex-grow flex items-center justify-center py-8 relative">
             <div className="absolute w-44 h-44 border border-tertiary/20 rounded-full animate-[spin_12s_linear_infinite]"></div>
             <div className="absolute w-32 h-32 border border-secondary/30 rounded-full animate-[spin_8s_linear_infinite_reverse]"></div>
-            
+
             <div className="w-16 h-16 bg-primary rounded-full neon-glow-primary z-10 relative flex items-center justify-center">
               <div className="absolute inset-[2px] bg-background rounded-full"></div>
               <span className={`material-symbols-outlined text-primary text-2xl ${isTransmitting ? 'animate-bounce text-secondary' : 'animate-pulse'}`}>
                 sensors
               </span>
             </div>
-            
+
             {/* Pulsing signal rings when transmitting */}
             {isTransmitting && (
               <>
@@ -120,14 +155,14 @@ export const Contact: React.FC = () => {
                 </label>
                 <div className="relative">
                   <span className="absolute left-3 top-1/2 -translate-y-1/2 material-symbols-outlined text-outline-variant text-lg">person</span>
-                  <input 
-                    className="w-full bg-surface-container-lowest/50 border border-surface-container-highest text-on-surface placeholder:text-outline-variant rounded-lg py-3 pl-10 pr-4 focus:ring-1 focus:ring-secondary focus:border-secondary focus:bg-surface-container-low transition-all font-body-md text-sm outline-none" 
-                    id="name" 
+                  <input
+                    className="w-full bg-surface-container-lowest/50 border border-surface-container-highest text-on-surface placeholder:text-outline-variant rounded-lg py-3 pl-10 pr-4 focus:ring-1 focus:ring-secondary focus:border-secondary focus:bg-surface-container-low transition-all font-body-md text-sm outline-none"
+                    id="name"
                     type="text"
                     required
                     value={name}
                     onChange={(e) => setName(e.target.value)}
-                    placeholder="e.g. Straw Hat..." 
+                    placeholder="e.g. Straw Hat..."
                   />
                 </div>
               </div>
@@ -139,13 +174,13 @@ export const Contact: React.FC = () => {
                 </label>
                 <div className="relative">
                   <span className="absolute left-3 top-1/2 -translate-y-1/2 material-symbols-outlined text-outline-variant text-lg">sailing</span>
-                  <input 
-                    className="w-full bg-surface-container-lowest/50 border border-surface-container-highest text-on-surface placeholder:text-outline-variant rounded-lg py-3 pl-10 pr-4 focus:ring-1 focus:ring-secondary focus:border-secondary focus:bg-surface-container-low transition-all font-body-md text-sm outline-none" 
-                    id="affiliation" 
+                  <input
+                    className="w-full bg-surface-container-lowest/50 border border-surface-container-highest text-on-surface placeholder:text-outline-variant rounded-lg py-3 pl-10 pr-4 focus:ring-1 focus:ring-secondary focus:border-secondary focus:bg-surface-container-low transition-all font-body-md text-sm outline-none"
+                    id="affiliation"
                     type="text"
                     value={affiliation}
                     onChange={(e) => setAffiliation(e.target.value)}
-                    placeholder="Your Crew / Ship..." 
+                    placeholder="Your Crew / Ship..."
                   />
                 </div>
               </div>
@@ -158,14 +193,14 @@ export const Contact: React.FC = () => {
               </label>
               <div className="relative">
                 <span className="absolute left-3 top-1/2 -translate-y-1/2 material-symbols-outlined text-outline-variant text-lg">alternate_email</span>
-                <input 
-                  className="w-full bg-surface-container-lowest/50 border border-surface-container-highest text-on-surface placeholder:text-outline-variant rounded-lg py-3 pl-10 pr-4 focus:ring-1 focus:ring-secondary focus:border-secondary focus:bg-surface-container-low transition-all font-body-md text-sm outline-none" 
-                  id="email" 
+                <input
+                  className="w-full bg-surface-container-lowest/50 border border-surface-container-highest text-on-surface placeholder:text-outline-variant rounded-lg py-3 pl-10 pr-4 focus:ring-1 focus:ring-secondary focus:border-secondary focus:bg-surface-container-low transition-all font-body-md text-sm outline-none"
+                  id="email"
                   type="email"
                   required
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
-                  placeholder="communication@fleet.com" 
+                  placeholder="communication@fleet.com"
                 />
               </div>
             </div>
@@ -175,20 +210,20 @@ export const Contact: React.FC = () => {
               <label className="font-label-sm text-xs text-on-surface-variant uppercase tracking-wider block font-bold" htmlFor="message">
                 Encrypted Transmission Box
               </label>
-              <textarea 
-                className="w-full bg-surface-container-lowest/50 border border-surface-container-highest text-on-surface placeholder:text-outline-variant rounded-lg py-3 px-4 focus:ring-1 focus:ring-secondary focus:border-secondary focus:bg-surface-container-low transition-all font-body-md text-sm outline-none resize-none font-mono" 
-                id="message" 
+              <textarea
+                className="w-full bg-surface-container-lowest/50 border border-surface-container-highest text-on-surface placeholder:text-outline-variant rounded-lg py-3 px-4 focus:ring-1 focus:ring-secondary focus:border-secondary focus:bg-surface-container-low transition-all font-body-md text-sm outline-none resize-none font-mono"
+                id="message"
                 rows={5}
                 required
                 value={message}
                 onChange={(e) => setMessage(e.target.value)}
-                placeholder="Draft your code signal..." 
+                placeholder="Draft your code signal..."
               />
             </div>
 
             {/* Action */}
             <div className="flex justify-end pt-2">
-              <button 
+              <button
                 type="submit"
                 disabled={isTransmitting}
                 className="group relative inline-flex items-center justify-center px-8 py-3 bg-gradient-to-r from-secondary-container to-secondary text-on-secondary font-title-md text-sm font-bold uppercase tracking-wider rounded-lg overflow-hidden transition-all hover:scale-[1.02] active:scale-95 disabled:opacity-50 disabled:hover:scale-100 neon-glow-secondary border border-secondary/50"
@@ -202,6 +237,17 @@ export const Contact: React.FC = () => {
                 </span>
               </button>
             </div>
+
+            {/* Error Banner */}
+            {transmitError && (
+              <div className="mt-4 p-3 rounded-lg border border-error/50 bg-error-container/20 backdrop-blur-sm flex items-start gap-3">
+                <span className="material-symbols-outlined text-error text-xl flex-shrink-0 mt-0.5" style={{ fontVariationSettings: "'FILL' 1" }}>warning</span>
+                <div>
+                  <p className="font-title-md text-xs text-error uppercase tracking-wider font-bold mb-1">Transmission Failed</p>
+                  <p className="font-body-md text-xs text-on-error-container">{transmitError}</p>
+                </div>
+              </div>
+            )}
           </form>
 
           {/* Social connections */}
@@ -211,25 +257,22 @@ export const Contact: React.FC = () => {
               Alternative Channels
             </span>
             <div className="flex items-center gap-3">
-              <a 
-                href="https://linkedin.com/in/rahul-khanapuri" 
-                target="_blank" 
+              <a
+                href="https://linkedin.com/in/rahul-khanapuri"
+                target="_blank"
                 rel="noreferrer"
                 className="w-11 h-11 rounded-full border border-surface-container-highest flex items-center justify-center text-outline hover:text-secondary hover:border-secondary hover:shadow-[0_0_15px_rgba(255,219,60,0.5)] transition-all bg-surface-container-lowest/50 group"
                 title="LinkedIn Signal"
               >
                 <span className="material-symbols-outlined group-hover:scale-110 transition-transform text-lg">work</span>
               </a>
-              <a 
+              <a
                 href="mailto:rahulkhanapuri25@gmail.com"
                 className="w-11 h-11 rounded-full border border-surface-container-highest flex items-center justify-center text-outline hover:text-tertiary hover:border-tertiary hover:shadow-[0_0_15px_rgba(255,179,179,0.5)] transition-all bg-surface-container-lowest/50 group"
                 title="Transponder Snail Mail"
               >
                 <span className="material-symbols-outlined group-hover:scale-110 transition-transform text-lg">alternate_email</span>
               </a>
-              <span className="text-xs text-outline-variant font-mono pl-2">
-                +91 8861069591
-              </span>
             </div>
           </div>
         </div>
@@ -240,19 +283,19 @@ export const Contact: React.FC = () => {
         <div className="fixed inset-0 z-50 flex items-center justify-center bg-background/80 backdrop-blur-md px-4">
           <div className="w-full max-w-xl bg-surface-dim/95 border-2 border-secondary rounded-2xl p-6 shadow-[0_0_50px_rgba(255,219,60,0.4)] relative font-mono text-sm">
             <div className="absolute top-0 right-0 p-4">
-              <button 
+              <button
                 onClick={handleCloseLog}
                 className="text-secondary hover:text-white transition-colors"
               >
                 <span className="material-symbols-outlined">close</span>
               </button>
             </div>
-            
+
             <h3 className="font-display-xl text-xl text-secondary mb-4 uppercase flex items-center gap-2">
               <span className="material-symbols-outlined text-secondary animate-pulse">check_circle</span>
               TRANSMISSION SUCCESS
             </h3>
-            
+
             <div className="space-y-3 text-primary-fixed-dim bg-surface-container-lowest/60 p-4 rounded-lg border border-primary/20 max-h-[300px] overflow-y-auto">
               <div><span className="text-tertiary">SIGNAL_STATUS:</span> SECURE</div>
               <div><span className="text-tertiary">FREQUENCY:</span> {frequency.toFixed(1)} MHz</div>
@@ -267,13 +310,13 @@ export const Contact: React.FC = () => {
                 </p>
               </div>
             </div>
-            
+
             <p className="text-xs text-outline-variant mt-4 text-center">
               Transponder Snail connection terminated. Connection stored in digital archives.
             </p>
-            
+
             <div className="mt-6 flex justify-center">
-              <button 
+              <button
                 onClick={handleCloseLog}
                 className="px-6 py-2 bg-secondary text-on-secondary font-title-md text-xs font-bold uppercase rounded hover:brightness-110 transition-all manga-border"
               >
