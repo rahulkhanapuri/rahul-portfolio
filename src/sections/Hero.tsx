@@ -9,11 +9,11 @@ interface HeroProps {
 export const Hero: React.FC<HeroProps> = ({ onRecruitClick, onJourneyClick }) => {
   return (
     <section id="home" className="min-h-screen flex items-center justify-center relative overflow-hidden pt-24 pb-16 bg-[#000814]">
-      
+
       {/* Immersive Ocean & Fog Background */}
       <div className="absolute inset-0 z-0">
-        <img 
-          alt="Rahul Khanapuri Portfolio Background" 
+        <img
+          alt="Rahul Khanapuri Portfolio Background"
           className="w-full h-full object-cover opacity-20 mix-blend-screen scale-105"
           src="https://lh3.googleusercontent.com/aida-public/AB6AXuDEdMocE_uq77Hdn8QwkfBpxkf3ZaQQE983oM7e_OmteQVwZLbbbF6HQ_yw8bk94c8BB4gsgBTgKCOS5SKggiW1AOaSRDr-ei7pwNVvnaB142y3CGWdJPkEb1BzoQg-9YpJb84gBnm4zGpflx-BxjOfg0JcTYagdiAAC31VSEzguaxdCErPE7H8wNiwcpJE6tDtSx5JpFDqx0BkRa5GEqnrEmQnhkDfn96slKMwlbezJU2qDuIZ1tUL_-Y-ClgXSKlPjKr3BYciCrfJ"
         />
@@ -35,10 +35,10 @@ export const Hero: React.FC<HeroProps> = ({ onRecruitClick, onJourneyClick }) =>
       </div>
 
       <div className="container mx-auto px-margin-mobile md:px-margin-desktop relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center w-full max-w-[1400px]">
-        
+
         {/* LEFT COLUMN: Command Title, HUD Telemetry & Narrative */}
         <div className="lg:col-span-7 flex flex-col items-start gap-6 relative">
-          
+
           {/* Status Telemetry Tag */}
           <div className="flex items-center gap-2.5 bg-surface-container-low/75 border border-secondary/30 px-4 py-2 rounded-full shadow-[0_0_20px_rgba(255,219,60,0.1)] backdrop-blur-md">
             <span className="w-2 h-2 rounded-full bg-secondary shadow-[0_0_10px_rgba(255,219,60,0.8)] animate-[ping_2s_linear_infinite]" />
@@ -51,7 +51,7 @@ export const Hero: React.FC<HeroProps> = ({ onRecruitClick, onJourneyClick }) =>
           <div className="relative">
             {/* Spinning Compass background behind Title */}
             <div className="absolute -left-16 -top-16 w-48 h-48 border border-dashed border-primary/5 rounded-full animate-[spin_60s_linear_infinite] pointer-events-none" />
-            
+
             <h1 className="font-display-xl text-4xl sm:text-5xl md:text-[68px] leading-[1.05] text-on-surface uppercase tracking-tighter font-black drop-shadow-md select-none">
               Senior Full-Stack <br />
               <span className="text-secondary drop-shadow-[0_0_20px_rgba(255,219,60,0.4)] relative inline-block">
@@ -73,7 +73,7 @@ export const Hero: React.FC<HeroProps> = ({ onRecruitClick, onJourneyClick }) =>
             </div>
             <div className="pl-2">
               <span className="text-[#b8070f] font-bold block">BOUNTY VAL</span>
-              <span className="text-[#ffdb3c] font-black uppercase block mt-0.5">฿ 8,861,069,591</span>
+              <span className="text-[#ffdb3c] font-black uppercase block mt-0.5"> ₹ 9,00,000</span>
             </div>
           </div>
 
@@ -84,7 +84,7 @@ export const Hero: React.FC<HeroProps> = ({ onRecruitClick, onJourneyClick }) =>
 
           {/* Action CTAs */}
           <div className="flex flex-col sm:flex-row gap-4 w-full sm:w-auto mt-2">
-            <button 
+            <button
               onClick={onRecruitClick}
               className="relative group bg-gradient-to-r from-secondary-container to-secondary text-on-secondary font-title-md text-sm font-bold px-8 py-4 rounded-xl shadow-[0_0_20px_rgba(255,219,60,0.25)] hover:shadow-[0_0_30px_rgba(255,219,60,0.45)] transition-all duration-300 border border-secondary/40 flex items-center justify-center gap-2.5 uppercase tracking-wider scale-98 active:scale-95"
             >
@@ -92,7 +92,7 @@ export const Hero: React.FC<HeroProps> = ({ onRecruitClick, onJourneyClick }) =>
               <span className="material-symbols-outlined text-lg" style={{ fontVariationSettings: "'FILL' 1" }}>sailing</span>
               Recruit Captain
             </button>
-            <button 
+            <button
               onClick={onJourneyClick}
               className="relative group bg-surface-dim/40 backdrop-blur-md text-tertiary font-title-md text-sm font-bold px-8 py-4 rounded-xl border-2 border-tertiary/40 hover:border-tertiary hover:bg-tertiary/10 shadow-[0_0_15px_rgba(255,179,179,0.1)] hover:shadow-[0_0_25px_rgba(255,179,179,0.35)] transition-all duration-300 flex items-center justify-center gap-2.5 uppercase tracking-wider scale-98 active:scale-95"
             >

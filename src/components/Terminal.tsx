@@ -12,7 +12,7 @@ export const Terminal: React.FC = () => {
     "  role: 'Senior Software Engineer',",
     "  experience: '2+ Years at Sea',",
     "  haki: ['React', 'TypeScript', 'Node.js', 'AWS'],",
-    "  bounty: '฿ 9,999,000,000'",
+    "  bounty: ' ₹ 9,00,000'",
     "};",
     "",
     "async function embark() {",
