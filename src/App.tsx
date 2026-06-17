@@ -4,6 +4,11 @@ import { Journey } from './sections/Journey';
 import { Bounties } from './sections/Bounties';
 import { Islands } from './sections/Islands';
 import { Contact } from './sections/Contact';
+import luffy from "./assets/luffy.png";
+import zoro from "./assets/zoro.png";
+import shanks from "./assets/shanks.png";
+import roger from "./assets/roger.png";
+import hiriluk from "./assets/hiriluk.png";
 
 interface Quote {
   text: string;
@@ -18,42 +23,42 @@ const quotesList: Quote[] = [
     text: "I don't want to conquer anything. I just think the guy with the most freedom on this whole ocean is the Pirate King!",
     author: "Monkey D. Luffy",
     role: "Captain of the Straw Hat Pirates",
-    avatar: "https://lh3.googleusercontent.com/aida-public/AB6AXuDEdMocE_uq77Hdn8QwkfBpxkf3ZaQQE983oM7e_OmteQVwZLbbbF6HQ_yw8bk94c8BB4gsgBTgKCOS5SKggiW1AOaSRDr-ei7pwNVvnaB142y3CGWdJPkEb1BzoQg-9YpJb84gBnm4zGpflx-BxjOfg0JcTYagdiAAC31VSEzguaxdCErPE7H8wNiwcpJE6tDtSx5JpFDqx0BkRa5GEqnrEmQnhkDfn96slKMwlbezJU2qDuIZ1tUL_-Y-ClgXSKlPjKr3BYciCrfJ",
+    avatar: luffy,
     color: "border-[#FFDB3C] text-[#FFDB3C] shadow-[0_0_20px_rgba(255,219,60,0.4)]"
   },
   {
     text: "If you don't take risks, you can't create a future!",
     author: "Monkey D. Luffy",
     role: "Captain of the Straw Hat Pirates",
-    avatar: "https://lh3.googleusercontent.com/aida-public/AB6AXuDEdMocE_uq77Hdn8QwkfBpxkf3ZaQQE983oM7e_OmteQVwZLbbbF6HQ_yw8bk94c8BB4gsgBTgKCOS5SKggiW1AOaSRDr-ei7pwNVvnaB142y3CGWdJPkEb1BzoQg-9YpJb84gBnm4zGpflx-BxjOfg0JcTYagdiAAC31VSEzguaxdCErPE7H8wNiwcpJE6tDtSx5JpFDqx0BkRa5GEqnrEmQnhkDfn96slKMwlbezJU2qDuIZ1tUL_-Y-ClgXSKlPjKr3BYciCrfJ",
+    avatar: luffy,
     color: "border-[#FFDB3C] text-[#FFDB3C] shadow-[0_0_20px_rgba(255,219,60,0.4)]"
   },
   {
     text: "When do you think people die? When they are shot by a heart-seeking bullet? No. They die when they are forgotten!",
     author: "Dr. Hiriluk",
     role: "Quack Doctor of Drum Island",
-    avatar: "https://lh3.googleusercontent.com/aida-public/AB6AXuCVpYQyisB_GMtusH8Md59YMcLw672kIueUDioFhWHzgMJUe58SGrC1LE-nP5pk4sHAE5ZEE-Yw84J8bkH12TBbf_z1NIdQwmQiRfn0j1T2tpPdUoGjUYz68oYl4LPIoYeWmB0HQx9rxotE-hnaQZSPVUX--igAbabFtp2rh6sKkgl-3OtyC223jSw-Fvm9ZfrLCYAfkSTj6NTXZbG6fpUA3ovYypI4Tt2N33MntJV1WXknp3CyyA39HtcabwR4a52_eqplkY3MXQih",
+    avatar: hiriluk,
     color: "border-[#FF7373] text-[#FF7373] shadow-[0_0_20px_rgba(255,115,115,0.4)]"
   },
   {
     text: "Inherited Will, The Destiny of Age, and The Dreams of People... As long as people continue to pursue the meaning of Freedom, these things will never cease to be!",
     author: "Gol D. Roger",
     role: "The Pirate King",
-    avatar: "https://lh3.googleusercontent.com/aida-public/AB6AXuD-8KUEL-CEBjnbY3JaOf6Hk5zOeupGShO4w5kJIpDTm4XW7oOdY9yryjGZ4RIvTI7Mjy_zRSGWI5a-N2gVUj_YqUUbLasEw_1ASQVHlOFdprAxo3qr421qtDwig1HJqB5DjkIK4X9FwSqA20WvHK4COeXfq-RY6pBE3CemWtXgZjnzGfp4k_j7o60SDBGEAa4TFO8gCF_JO-bb1oaeIKRujw_12Q-1aocpvBKsb5EYdBCojQrHasCaDtDcE6bnOYdzBB0SbER15GWy",
+    avatar: roger,
     color: "border-[#79A0E3] text-[#79A0E3] shadow-[0_0_20px_rgba(121,160,227,0.4)]"
   },
   {
     text: "When I decided to follow my dream, I had already discarded my life.",
     author: "Roronoa Zoro",
     role: "Swordsman of the Straw Hat Pirates",
-    avatar: "https://lh3.googleusercontent.com/aida-public/AB6AXuCbjNGTufMNQIWrT1UX4NcxRpE62ZXOtuWoa06fiKICebzfoSzCtE0kCBzciQq0hsCU1STunVQzXx11u6238_Ofj_h1bPsEACqu7LLXVrusJCeip6zHMpKBJEvWONW6zA3x9xRoPq7gW0hTxblFAoa5x2RGxVJDo1HQDaGd2NWhj90RStJTvEzcf2KZZqdGidCJD9mmpuEQNwwouga1T9AfaWg4He7CHXbcMuDWEMMn5ZBcHPREm_dby3cCjQkZ0-JL4bZpDNVcdy1Q",
+    avatar: zoro,
     color: "border-[#79A0E3] text-[#79A0E3] shadow-[0_0_20px_rgba(121,160,227,0.4)]"
   },
   {
     text: "By experiencing both victory and defeat, running away and shedding tears, a man will grow up.",
     author: "Red-Haired Shanks",
     role: "Captain of the Red Hair Pirates",
-    avatar: "https://lh3.googleusercontent.com/aida-public/AB6AXuDEdMocE_uq77Hdn8QwkfBpxkf3ZaQQE983oM7e_OmteQVwZLbbbF6HQ_yw8bk94c8BB4gsgBTgKCOS5SKggiW1AOaSRDr-ei7pwNVvnaB142y3CGWdJPkEb1BzoQg-9YpJb84gBnm4zGpflx-BxjOfg0JcTYagdiAAC31VSEzguaxdCErPE7H8wNiwcpJE6tDtSx5JpFDqx0BkRa5GEqnrEmQnhkDfn96slKMwlbezJU2qDuIZ1tUL_-Y-ClgXSKlPjKr3BYciCrfJ",
+    avatar: shanks,
     color: "border-[#FF7373] text-[#FF7373] shadow-[0_0_20px_rgba(255,115,115,0.4)]"
   }
 ];
@@ -113,8 +118,8 @@ function App() {
 
       {/* TopAppBar (Desktop Navigation) */}
       <header className="hidden md:flex fixed top-0 w-full z-50 justify-between items-center px-margin-desktop h-20 bg-surface-dim/80 backdrop-blur-xl border-b-4 border-surface-container-highest shadow-[0_0_20px_rgba(255,219,60,0.2)]">
-        <div 
-          onClick={() => scrollToSection('home')} 
+        <div
+          onClick={() => scrollToSection('home')}
           className="flex flex-col cursor-pointer scale-95 active:scale-90 transition-transform group select-none"
         >
           <span className="font-headline-lg text-2xl font-black text-secondary tracking-tighter uppercase group-hover:brightness-110 leading-none">
@@ -124,55 +129,52 @@ function App() {
             Rahul Khanapuri
           </span>
         </div>
-        
+
         <nav className="flex gap-8">
-          <button 
+          <button
             onClick={() => scrollToSection('journey')}
-            className={`font-title-md text-base transition-all duration-300 px-3 py-1 scale-95 active:scale-90 flex flex-col items-center border-b-2 ${
-              activeSection === 'journey' 
-                ? 'text-secondary border-secondary' 
-                : 'text-on-surface-variant border-transparent hover:text-primary'
-            }`}
+            className={`font-title-md text-base transition-all duration-300 px-3 py-1 scale-95 active:scale-90 flex flex-col items-center border-b-2 ${activeSection === 'journey'
+              ? 'text-secondary border-secondary'
+              : 'text-on-surface-variant border-transparent hover:text-primary'
+              }`}
           >
             Crew (About)
           </button>
-          <button 
+          <button
             onClick={() => scrollToSection('bounties')}
-            className={`font-title-md text-base transition-all duration-300 px-3 py-1 scale-95 active:scale-90 flex flex-col items-center border-b-2 ${
-              activeSection === 'bounties' 
-                ? 'text-secondary border-secondary' 
-                : 'text-on-surface-variant border-transparent hover:text-primary'
-            }`}
+            className={`font-title-md text-base transition-all duration-300 px-3 py-1 scale-95 active:scale-90 flex flex-col items-center border-b-2 ${activeSection === 'bounties'
+              ? 'text-secondary border-secondary'
+              : 'text-on-surface-variant border-transparent hover:text-primary'
+              }`}
           >
             Bounties (Skills)
           </button>
-          <button 
+          <button
             onClick={() => scrollToSection('islands')}
-            className={`font-title-md text-base transition-all duration-300 px-3 py-1 scale-95 active:scale-90 flex flex-col items-center border-b-2 ${
-              activeSection === 'islands' 
-                ? 'text-secondary border-secondary' 
-                : 'text-on-surface-variant border-transparent hover:text-primary'
-            }`}
+            className={`font-title-md text-base transition-all duration-300 px-3 py-1 scale-95 active:scale-90 flex flex-col items-center border-b-2 ${activeSection === 'islands'
+              ? 'text-secondary border-secondary'
+              : 'text-on-surface-variant border-transparent hover:text-primary'
+              }`}
           >
             Islands (Projects)
           </button>
         </nav>
 
         <div className="flex items-center gap-4">
-          <button 
+          <button
             onClick={() => scrollToSection('contact')}
             className="px-5 py-2 bg-gradient-to-r from-secondary-container to-secondary text-on-secondary font-title-md text-sm font-bold rounded-lg manga-border hover:brightness-110 active:scale-95 transition-all"
           >
             RECRUIT
           </button>
-          <button 
+          <button
             onClick={handleCompassClick}
             className="text-primary hover:bg-surface-bright/20 hover:text-primary transition-all duration-300 p-2 rounded-full flex items-center justify-center border border-primary/20 shadow-inner"
             title="Log Pose Compass"
           >
-            <span 
-              className="material-symbols-outlined transition-transform duration-300" 
-              style={{ 
+            <span
+              className="material-symbols-outlined transition-transform duration-300"
+              style={{
                 fontVariationSettings: "'FILL' 1",
                 transform: `rotate(${compassAngle}deg)`
               }}
@@ -189,7 +191,7 @@ function App() {
           <span className="font-headline-lg text-lg font-black text-secondary tracking-tighter uppercase leading-none">LOGBOOK</span>
           <span className="font-mono text-[8px] text-primary tracking-widest uppercase font-bold mt-0.5 leading-none">Rahul Khanapuri</span>
         </div>
-        <button 
+        <button
           onClick={() => setMobileMenuOpen(prev => !prev)}
           className="text-primary p-2 flex items-center justify-center"
         >
@@ -198,15 +200,14 @@ function App() {
       </div>
 
       {/* SideNavBar (Mobile Sidebar) */}
-      <nav 
-        className={`md:hidden fixed left-0 top-0 h-full w-72 z-40 flex flex-col bg-surface-container-lowest/95 backdrop-blur-2xl border-r-4 border-surface-container-highest shadow-[10px_0_30px_rgba(255,47,76,0.2)] transform transition-transform duration-300 ${
-          mobileMenuOpen ? 'translate-x-0' : '-translate-x-full'
-        }`}
+      <nav
+        className={`md:hidden fixed left-0 top-0 h-full w-72 z-40 flex flex-col bg-surface-container-lowest/95 backdrop-blur-2xl border-r-4 border-surface-container-highest shadow-[10px_0_30px_rgba(255,47,76,0.2)] transform transition-transform duration-300 ${mobileMenuOpen ? 'translate-x-0' : '-translate-x-full'
+          }`}
       >
         <div className="p-6 border-b-4 border-surface-container-highest">
           <div className="w-16 h-16 rounded-full overflow-hidden mb-4 border-2 border-secondary/50 shadow-inner bg-surface">
-            <img 
-              alt="Rahul Khanapuri Mobile Avatar" 
+            <img
+              alt="Rahul Khanapuri Mobile Avatar"
               className="w-full h-full object-cover"
               src="https://lh3.googleusercontent.com/aida-public/AB6AXuDEdMocE_uq77Hdn8QwkfBpxkf3ZaQQE983oM7e_OmteQVwZLbbbF6HQ_yw8bk94c8BB4gsgBTgKCOS5SKggiW1AOaSRDr-ei7pwNVvnaB142y3CGWdJPkEb1BzoQg-9YpJb84gBnm4zGpflx-BxjOfg0JcTYagdiAAC31VSEzguaxdCErPE7H8wNiwcpJE6tDtSx5JpFDqx0BkRa5GEqnrEmQnhkDfn96slKMwlbezJU2qDuIZ1tUL_-Y-ClgXSKlPjKr3BYciCrfJ"
             />
@@ -216,37 +217,34 @@ function App() {
         </div>
 
         <div className="flex-1 overflow-y-auto p-4 flex flex-col gap-2">
-          <button 
+          <button
             onClick={() => scrollToSection('journey')}
-            className={`flex items-center gap-4 p-4 text-left rounded-xl transition-all ${
-              activeSection === 'journey' 
-                ? 'bg-tertiary-container/40 text-tertiary border border-tertiary/20' 
-                : 'text-on-surface-variant hover:bg-surface-variant'
-            }`}
+            className={`flex items-center gap-4 p-4 text-left rounded-xl transition-all ${activeSection === 'journey'
+              ? 'bg-tertiary-container/40 text-tertiary border border-tertiary/20'
+              : 'text-on-surface-variant hover:bg-surface-variant'
+              }`}
           >
             <span className="material-symbols-outlined">groups</span>
             <span className="font-title-md text-sm font-bold">Crew (About)</span>
           </button>
-          
-          <button 
+
+          <button
             onClick={() => scrollToSection('bounties')}
-            className={`flex items-center gap-4 p-4 text-left rounded-xl transition-all ${
-              activeSection === 'bounties' 
-                ? 'bg-tertiary-container/40 text-tertiary border border-tertiary/20' 
-                : 'text-on-surface-variant hover:bg-surface-variant'
-            }`}
+            className={`flex items-center gap-4 p-4 text-left rounded-xl transition-all ${activeSection === 'bounties'
+              ? 'bg-tertiary-container/40 text-tertiary border border-tertiary/20'
+              : 'text-on-surface-variant hover:bg-surface-variant'
+              }`}
           >
             <span className="material-symbols-outlined">military_tech</span>
             <span className="font-title-md text-sm font-bold">Bounties (Skills)</span>
           </button>
-          
-          <button 
+
+          <button
             onClick={() => scrollToSection('islands')}
-            className={`flex items-center gap-4 p-4 text-left rounded-xl transition-all ${
-              activeSection === 'islands' 
-                ? 'bg-tertiary-container/40 text-tertiary border border-tertiary/20' 
-                : 'text-on-surface-variant hover:bg-surface-variant'
-            }`}
+            className={`flex items-center gap-4 p-4 text-left rounded-xl transition-all ${activeSection === 'islands'
+              ? 'bg-tertiary-container/40 text-tertiary border border-tertiary/20'
+              : 'text-on-surface-variant hover:bg-surface-variant'
+              }`}
           >
             <span className="material-symbols-outlined">map</span>
             <span className="font-title-md text-sm font-bold">Islands (Projects)</span>
@@ -254,7 +252,7 @@ function App() {
         </div>
 
         <div className="p-6 border-t-4 border-surface-container-highest">
-          <button 
+          <button
             onClick={() => scrollToSection('contact')}
             className="w-full py-4 bg-gradient-to-r from-secondary-container to-secondary text-on-secondary font-title-md text-sm font-bold rounded-lg manga-border hover:brightness-110 active:scale-95 transition-all uppercase tracking-wider"
           >
@@ -265,7 +263,7 @@ function App() {
 
       {/* Backdrop for mobile menu */}
       {mobileMenuOpen && (
-        <div 
+        <div
           onClick={() => setMobileMenuOpen(false)}
           className="fixed inset-0 z-30 bg-black/60 backdrop-blur-sm md:hidden"
         ></div>
@@ -273,7 +271,7 @@ function App() {
 
       {/* Main Sections */}
       <main className="flex-1 w-full relative">
-        <Hero 
+        <Hero
           onRecruitClick={() => scrollToSection('contact')}
           onJourneyClick={() => scrollToSection('journey')}
         />
@@ -289,23 +287,23 @@ function App() {
           © 1524 AGE OF PIRATES | CODED IN THE NEW WORLD
         </div>
         <div className="flex gap-6 flex-wrap justify-center">
-          <a 
-            href="https://github.com" 
-            target="_blank" 
+          <a
+            href="https://github.com"
+            target="_blank"
             rel="noreferrer"
             className="font-body-md text-xs text-on-surface-variant hover:text-secondary transition-all hover:scale-105"
           >
             GitHub Outpost
           </a>
-          <a 
-            href="https://linkedin.com/in/rahul-khanapuri" 
-            target="_blank" 
+          <a
+            href="https://linkedin.com/in/rahul-khanapuri"
+            target="_blank"
             rel="noreferrer"
             className="font-body-md text-xs text-on-surface-variant hover:text-secondary transition-all hover:scale-105"
           >
             LinkedIn Port
           </a>
-          <a 
+          <a
             href="mailto:rahulkhanapuri25@gmail.com"
             className="font-body-md text-xs text-on-surface-variant hover:text-secondary transition-all hover:scale-105"
           >
@@ -336,36 +334,36 @@ const WisdomModal: React.FC<WisdomModalProps> = ({ quote, onClose }) => {
     <div className="fixed inset-0 z-50 flex items-center justify-center bg-background/85 backdrop-blur-md px-4">
       {/* Click outside to close */}
       <div className="absolute inset-0" onClick={onClose} />
-      
+
       {/* Modal Container */}
       <div className={`w-full max-w-lg bg-surface-dim/95 border-2 rounded-2xl p-6 relative font-mono text-sm z-10 transition-all ${quote.color}`}>
         {/* Close Button */}
         <div className="absolute top-0 right-0 p-4">
-          <button 
+          <button
             onClick={onClose}
             className="text-on-surface-variant hover:text-white transition-colors"
           >
             <span className="material-symbols-outlined">close</span>
           </button>
         </div>
-        
+
         {/* Wisdom Label */}
         <h3 className="font-mono text-xs text-[#b8070f] font-bold mb-5 tracking-widest uppercase flex items-center gap-1.5 border-b border-surface-container-highest pb-3">
           <span className="material-symbols-outlined text-[#ffdb3c] animate-pulse">explore</span>
           Compass Wisdom Transmitted
         </h3>
-        
+
         {/* Quote Content */}
         <div className="flex flex-col sm:flex-row items-center sm:items-start gap-4">
           {/* Character Avatar */}
           <div className="w-16 h-16 rounded-full overflow-hidden border-2 border-[#ffdb3c] shadow-md flex-shrink-0 bg-surface">
-            <img 
-              alt={quote.author} 
+            <img
+              alt={quote.author}
               className="w-full h-full object-cover"
               src={quote.avatar}
             />
           </div>
-          
+
           {/* Text block */}
           <div className="flex-grow text-center sm:text-left">
             <h4 className="font-mono text-sm text-[#ffdb3c] font-black uppercase tracking-wide">
@@ -374,22 +372,22 @@ const WisdomModal: React.FC<WisdomModalProps> = ({ quote, onClose }) => {
             <span className="font-mono text-[9px] text-outline-variant uppercase tracking-widest block mb-3 leading-none">
               {quote.role}
             </span>
-            
+
             <p className="font-mono text-xs text-on-surface-variant leading-relaxed italic border-l-2 border-[#b8070f] pl-3 py-1 bg-surface-lowest/30 rounded-r text-left">
               "{quote.text}"
             </p>
           </div>
         </div>
-        
+
         {/* Telemetry log footer */}
         <div className="border-t border-surface-container-highest mt-6 pt-3 flex justify-between items-center text-[8px] text-outline-variant font-mono tracking-wider">
           <span>CODENAME: WILL_OF_D</span>
           <span>STATUS: SYNCED</span>
         </div>
-        
+
         {/* Dismiss Button */}
         <div className="mt-5 flex justify-center">
-          <button 
+          <button
             onClick={onClose}
             className="px-5 py-2 bg-gradient-to-r from-secondary-container to-secondary text-on-secondary font-title-md text-[10px] font-bold uppercase rounded-lg border border-secondary/40 hover:brightness-110 active:scale-95 transition-all shadow-[0_0_15px_rgba(255,219,60,0.25)]"
           >
