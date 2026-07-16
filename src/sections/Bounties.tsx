@@ -97,7 +97,7 @@ export const Bounties: React.FC = () => {
   }, [activeCategory]);
 
   return (
-    <section id="bounties" className="py-24 px-margin-mobile md:px-margin-desktop max-w-[1600px] mx-auto w-full border-t-4 border-surface-container-highest bg-[#000E1C]/40 relative overflow-hidden">
+    <section id="haki" className="py-24 px-margin-mobile md:px-margin-desktop max-w-[1600px] mx-auto w-full border-t-4 border-surface-container-highest bg-[#000E1C]/40 relative overflow-hidden">
       
       {/* Background Ambience Orbs matching the active Haki color */}
       <div 
