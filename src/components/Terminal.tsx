@@ -11,7 +11,7 @@ export const Terminal: React.FC = () => {
     "  name: 'Rahul Khanapuri',",
     "  role: 'Senior Software Engineer',",
     "  experience: '2+ Years at Sea',",
-    "  haki: ['React', 'TypeScript', 'Node.js', 'AWS'],",
+    "  haki: ['React', 'React Native', 'TypeScript', 'Node.js', 'AWS'],",
     "  bounty: ' ₹ 9,00,000'",
     "};",
     "",
