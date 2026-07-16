@@ -284,11 +284,11 @@ function App() {
       {/* Footer */}
       <footer className="bg-surface-container-low border-t-4 border-surface-container-highest w-full py-6 px-margin-mobile md:px-margin-desktop flex flex-col md:flex-row justify-between items-center gap-6 z-10 relative">
         <div className="font-title-md text-sm text-secondary font-bold tracking-wider text-center md:text-left">
-          © 1524 AGE OF PIRATES | CODED IN THE NEW WORLD
+          {`© ${new Date().getFullYear()} AGE OF PIRATES | CODED IN THE NEW WORLD`}
         </div>
         <div className="flex gap-6 flex-wrap justify-center">
           <a
-            href="https://github.com"
+            href="https://github.com/rahulkhanapuri"
             target="_blank"
             rel="noreferrer"
             className="font-body-md text-xs text-on-surface-variant hover:text-secondary transition-all hover:scale-105"

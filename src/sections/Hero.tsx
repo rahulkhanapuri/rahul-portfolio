@@ -53,9 +53,9 @@ export const Hero: React.FC<HeroProps> = ({ onRecruitClick, onJourneyClick }) =>
             <div className="absolute -left-16 -top-16 w-48 h-48 border border-dashed border-primary/5 rounded-full animate-[spin_60s_linear_infinite] pointer-events-none" />
 
             <h1 className="font-display-xl text-4xl sm:text-5xl md:text-[68px] leading-[1.05] text-on-surface uppercase tracking-tighter font-black drop-shadow-md select-none">
-              Senior Full-Stack <br />
+              Senior Software<br />
               <span className="text-secondary drop-shadow-[0_0_20px_rgba(255,219,60,0.4)] relative inline-block">
-                Software Engineer
+                 Engineer
                 <span className="absolute -bottom-1.5 left-0 w-1/3 h-1.5 bg-secondary shadow-[0_0_10px_rgba(255,219,60,0.5)]" />
               </span>
             </h1>
