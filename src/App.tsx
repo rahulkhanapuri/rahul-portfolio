@@ -72,7 +72,7 @@ function App() {
   // Scroll detection to highlight active nav link
   useEffect(() => {
     const handleScroll = () => {
-      const sections = ['home', 'journey', 'bounties', 'islands', 'contact'];
+      const sections = ['home', 'journey', 'haki', 'islands', 'contact'];
       const scrollPosition = window.scrollY + 200; // Offset for triggers
 
       for (const section of sections) {
@@ -141,13 +141,13 @@ function App() {
             Crew (About)
           </button>
           <button
-            onClick={() => scrollToSection('bounties')}
-            className={`font-title-md text-base transition-all duration-300 px-3 py-1 scale-95 active:scale-90 flex flex-col items-center border-b-2 ${activeSection === 'bounties'
+            onClick={() => scrollToSection('haki')}
+            className={`font-title-md text-base transition-all duration-300 px-3 py-1 scale-95 active:scale-90 flex flex-col items-center border-b-2 ${activeSection === 'haki'
               ? 'text-secondary border-secondary'
               : 'text-on-surface-variant border-transparent hover:text-primary'
               }`}
           >
-            Bounties (Skills)
+            Haki (Skills)
           </button>
           <button
             onClick={() => scrollToSection('islands')}
@@ -229,14 +229,14 @@ function App() {
           </button>
 
           <button
-            onClick={() => scrollToSection('bounties')}
-            className={`flex items-center gap-4 p-4 text-left rounded-xl transition-all ${activeSection === 'bounties'
+            onClick={() => scrollToSection('haki')}
+            className={`flex items-center gap-4 p-4 text-left rounded-xl transition-all ${activeSection === 'haki'
               ? 'bg-tertiary-container/40 text-tertiary border border-tertiary/20'
               : 'text-on-surface-variant hover:bg-surface-variant'
               }`}
           >
             <span className="material-symbols-outlined">military_tech</span>
-            <span className="font-title-md text-sm font-bold">Bounties (Skills)</span>
+            <span className="font-title-md text-sm font-bold">Haki (Skills)</span>
           </button>
 
           <button
