@@ -114,7 +114,7 @@ export const Hero: React.FC<HeroProps> = ({ onRecruitClick, onJourneyClick }) =>
         </div>
 
         {/* RIGHT COLUMN: Terminal Command Board */}
-        <div className="lg:col-span-5 hidden lg:flex justify-end relative">
+        <div className="lg:col-span-5  lg:flex justify-end relative">
           {/* Radial glowing backing matching primary theme */}
           <div className="absolute inset-0 bg-primary/10 blur-[60px] rounded-full pointer-events-none" />
           <Terminal />
