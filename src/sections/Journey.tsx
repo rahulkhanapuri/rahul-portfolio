@@ -148,7 +148,7 @@ export const Journey: React.FC = () => {
               <span className="material-symbols-outlined text-sm">explore</span> Log Pose Navigation
             </span>
           </div>
-          <h2 className="font-display-xl text-display-xl text-on-surface uppercase tracking-tight drop-shadow-[0_0_15px_rgba(255,219,60,0.2)]">
+          <h2 className="font-display-xl text-3xl sm:text-5xl md:text-display-xl text-on-surface uppercase tracking-tight leading-tight drop-shadow-[0_0_15px_rgba(255,219,60,0.2)]">
             Charting the <span className="text-secondary">Unknown</span>
           </h2>
           <p className="font-body-md text-on-surface-variant max-w-2xl mt-4 leading-relaxed">

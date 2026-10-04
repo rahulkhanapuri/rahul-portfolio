@@ -95,7 +95,7 @@ export const Islands: React.FC = () => {
   const activeProject = projects[activeIndex];
 
   return (
-    <section id="islands" className="py-24 px-margin-mobile md:px-margin-desktop max-w-[1600px] mx-auto w-full border-t-4 border-surface-container-highest bg-[#000E1C]/40 relative overflow-hidden">
+    <section id="islands" className="py-16 md:py-24 px-margin-mobile md:px-margin-desktop max-w-[1600px] mx-auto w-full border-t-4 border-surface-container-highest bg-[#000E1C]/40 relative overflow-hidden">
       
       {/* Background Flare that matches the active project theme */}
       <div 
@@ -117,13 +117,13 @@ export const Islands: React.FC = () => {
       />
 
       {/* Section Header */}
-      <div className="flex flex-col items-center text-center mb-16 relative z-10">
+      <div className="flex flex-col items-center text-center mb-10 md:mb-16 relative z-10">
         <div className="inline-block px-4 py-1.5 border border-secondary/30 rounded-full mb-4 neon-glow bg-surface-container-highest/40 backdrop-blur-sm">
           <span className="font-label-sm text-xs text-secondary uppercase tracking-widest flex items-center gap-2">
             <span className="material-symbols-outlined text-sm" style={{ fontVariationSettings: "'FILL' 1" }}>map</span> Expedition logs
           </span>
         </div>
-        <h2 className="font-display-xl text-display-xl text-on-surface uppercase tracking-tight drop-shadow-[0_0_15px_rgba(255,219,60,0.2)]">
+        <h2 className="font-display-xl text-3xl sm:text-5xl md:text-display-xl text-on-surface uppercase tracking-tight leading-tight drop-shadow-[0_0_15px_rgba(255,219,60,0.2)]">
           Islands <span className="text-primary opacity-80">/ Archipelago</span>
         </h2>
         <p className="font-body-md text-on-surface-variant max-w-2xl mt-4 leading-relaxed">
@@ -218,8 +218,8 @@ export const Islands: React.FC = () => {
                     <span className={`font-mono text-xs font-bold ${isSelected ? proj.themeColor : 'text-outline-variant'}`}>
                       0{idx + 1}
                     </span>
-                    <div>
-                      <h4 className="font-title-md text-sm text-on-surface font-bold uppercase tracking-wider">
+                    <div className="min-w-0">
+                      <h4 className="font-title-md text-sm text-on-surface font-bold uppercase tracking-wider break-words">
                         {proj.islandName}
                       </h4>
                       <span className="font-mono text-[9px] text-[#b8070f] font-bold block">
@@ -228,7 +228,7 @@ export const Islands: React.FC = () => {
                     </div>
                   </div>
                   
-                  <span className={`material-symbols-outlined text-base transition-transform duration-300 ${
+                  <span className={`material-symbols-outlined text-base shrink-0 transition-transform duration-300 ${
                     isSelected ? proj.themeColor + ' translate-x-1' : 'text-outline-variant'
                   }`}>
                     arrow_forward_ios
@@ -241,10 +241,10 @@ export const Islands: React.FC = () => {
         </div>
 
         {/* RIGHT COMPONENT: Manifest details drawer */}
-        <div className="lg:col-span-7 glass-panel manga-border rounded-2xl p-6 md:p-8 bg-surface-dim/20 relative flex flex-col justify-between">
+        <div className="lg:col-span-7 glass-panel manga-border rounded-2xl p-4 sm:p-6 md:p-8 bg-surface-dim/20 relative flex flex-col justify-between">
           
           {/* Manifest header telemetry */}
-          <div className="flex justify-between items-center border-b border-surface-container-highest pb-4 mb-6 font-mono text-xs">
+          <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center gap-2 border-b border-surface-container-highest pb-4 mb-6 font-mono text-xs">
             <div className="flex items-center gap-2 text-[#b8070f] font-bold">
               <span className="w-2.5 h-2.5 rounded-full bg-primary animate-pulse" />
               <span>SHIPPING_MANIFEST.db</span>

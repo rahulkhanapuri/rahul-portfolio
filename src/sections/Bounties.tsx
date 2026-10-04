@@ -122,7 +122,7 @@ export const Bounties: React.FC = () => {
             <span className="material-symbols-outlined text-sm text-[#ffdb3c]" style={{ fontVariationSettings: "'FILL' 1" }}>military_tech</span> <span className="text-[#b8070f] font-bold">Combat Statistics</span>
           </span>
         </div>
-        <h2 className="font-display-xl text-display-xl text-on-surface uppercase tracking-tight drop-shadow-[0_0_15px_rgba(255,219,60,0.2)]">
+        <h2 className="font-display-xl text-3xl sm:text-5xl md:text-display-xl text-on-surface uppercase tracking-tight leading-tight drop-shadow-[0_0_15px_rgba(255,219,60,0.2)]">
           Haki <span className="text-secondary">Arsenal</span>
         </h2>
         <p className="font-body-md text-on-surface-variant max-w-2xl mt-4 leading-relaxed">

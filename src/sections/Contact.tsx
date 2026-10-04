@@ -84,7 +84,7 @@ export const Contact: React.FC = () => {
 
       {/* Header */}
       <div className="text-center mb-16 z-10 px-margin-mobile">
-        <h1 className="font-display-xl text-display-xl text-primary drop-shadow-[0_0_15px_rgba(177,200,233,0.6)] mb-2 tracking-tighter uppercase">
+        <h1 className="font-display-xl text-3xl sm:text-5xl md:text-display-xl leading-tight text-primary drop-shadow-[0_0_15px_rgba(177,200,233,0.6)] mb-2 tracking-tighter uppercase">
           Transponder Snail
         </h1>
         <p className="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mx-auto leading-relaxed">
